@@ -11,9 +11,17 @@ import Charts
 open class NativeChart: RCTViewManager {
     override open func view() -> UIView! {
         let label = UILabel()
-        label.text = "Hello World React Native"
+        label.numberOfLines = 2
+        label.text = "Hello World\nRendered from Native"
+        label.sizeToFit()
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
         let view = UIView()
         view.addSubview(label)
+        
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
         return view
     }
 }
