@@ -10,9 +10,7 @@ import Charts
 @objc(NativeChart)
 open class NativeChart: RCTViewManager, ChartViewDelegate {
     private var battleLineChart: LineChartView
-    private let recentData: [Double] = [
-        20.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0
-    ]
+    var data: [Double] = []
     
     public override init() {
         battleLineChart = LineChartView()
@@ -44,7 +42,7 @@ open class NativeChart: RCTViewManager, ChartViewDelegate {
         chart.chartDescription?.text = ""
         
         chart.xAxis.labelPosition = .bottom
-        chart.xAxis.setLabelCount(recentData.count, force: false)
+        chart.xAxis.setLabelCount(data.count, force: false)
         chart.xAxis.drawGridLinesEnabled = false
         chart.xAxis.drawLabelsEnabled = false
         
@@ -62,8 +60,8 @@ open class NativeChart: RCTViewManager, ChartViewDelegate {
         let colour = UIColor(red: 35/255, green: 135/255, blue: 255/255, alpha: 1.0)
         
         var dataEntries: [ChartDataEntry] = []
-        for i in 0..<recentData.count {
-            let dataEntry = BarChartDataEntry(x: Double(i), y: recentData[i])
+        for i in 0..<data.count {
+            let dataEntry = BarChartDataEntry(x: Double(i), y: data[i])
             dataEntries.append(dataEntry)
         }
         
@@ -75,7 +73,7 @@ open class NativeChart: RCTViewManager, ChartViewDelegate {
         let chartData = LineChartData.init(dataSets: [chartDataSet])
         chart.data = chartData
         
-        let avg = recentData.reduce(0.0, { x, y in x + y }) / Double(recentData.count)
+        let avg = data.reduce(0.0, { x, y in x + y }) / Double(data.count)
         let average = ChartLimitLine(limit: avg, label: String(format: "%.1f", avg))
         average.labelPosition = .bottomRight
         average.lineWidth = 0.5
