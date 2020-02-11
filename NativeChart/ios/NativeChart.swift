@@ -5,6 +5,8 @@
 //  Created by Yiheng Quan on 11/2/20.
 //
 
+import Charts
+
 @objc(NativeChart)
 open class NativeChart: RCTViewManager {
     override open func view() -> UIView! {

@@ -18,6 +18,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* NativeChartExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NativeChartExampleTests.m */; };
 		4AF7D874E5DCFEBBC575ED3D /* libPods-NativeChartExample-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B46F31F261CBFEFF77AEF4 /* libPods-NativeChartExample-tvOS.a */; };
 		56B3F3115D212A40571023D0 /* libPods-NativeChartExample-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADB6F3C36CF11930D8458C3 /* libPods-NativeChartExample-tvOSTests.a */; };
+		926EA28523F2BB7700E3BB30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926EA28423F2BB7700E3BB30 /* AppDelegate.swift */; };
 		C1A1D8F30BD0D8A43E9FF77E /* libPods-NativeChartExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3B74B6EA3498B58EA492AE /* libPods-NativeChartExample.a */; };
 		C56AB455F0840E09FED7602B /* libPods-NativeChartExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D64C2ECB84D341528ED4D0 /* libPods-NativeChartExampleTests.a */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,8 @@
 		32D64C2ECB84D341528ED4D0 /* libPods-NativeChartExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeChartExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADB6F3C36CF11930D8458C3 /* libPods-NativeChartExample-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeChartExample-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68C2DE3B53EC812764AA5C15 /* Pods-NativeChartExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeChartExample.debug.xcconfig"; path = "Target Support Files/Pods-NativeChartExample/Pods-NativeChartExample.debug.xcconfig"; sourceTree = "<group>"; };
+		926EA28323F2BB7600E3BB30 /* NativeChartExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NativeChartExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		926EA28423F2BB7700E3BB30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		976812DEF42B3923945952A7 /* Pods-NativeChartExample-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeChartExample-tvOS.release.xcconfig"; path = "Target Support Files/Pods-NativeChartExample-tvOS/Pods-NativeChartExample-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		AF3B74B6EA3498B58EA492AE /* libPods-NativeChartExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeChartExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B46F31F261CBFEFF77AEF4 /* libPods-NativeChartExample-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeChartExample-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,10 +131,12 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				926EA28423F2BB7700E3BB30 /* AppDelegate.swift */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				926EA28323F2BB7600E3BB30 /* NativeChartExample-Bridging-Header.h */,
 			);
 			name = NativeChartExample;
 			sourceTree = "<group>";
@@ -194,7 +199,6 @@
 				1AF6CD639C1DEEC5F5F6055B /* Pods-NativeChartExampleTests.debug.xcconfig */,
 				CF630F04E995A93C0086BB81 /* Pods-NativeChartExampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -292,6 +296,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1130;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -308,6 +315,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -528,6 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926EA28523F2BB7700E3BB30 /* AppDelegate.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
@@ -582,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1AF6CD639C1DEEC5F5F6055B /* Pods-NativeChartExampleTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -605,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF630F04E995A93C0086BB81 /* Pods-NativeChartExampleTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = NativeChartExampleTests/Info.plist;
@@ -626,6 +637,7 @@
 			baseConfigurationReference = 68C2DE3B53EC812764AA5C15 /* Pods-NativeChartExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				INFOPLIST_FILE = NativeChartExample/Info.plist;
@@ -637,6 +649,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NativeChartExample;
+				SWIFT_OBJC_BRIDGING_HEADER = "NativeChartExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -646,6 +661,7 @@
 			baseConfigurationReference = 04D4C785DE7B8D8C75FF0F52 /* Pods-NativeChartExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = NativeChartExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -656,6 +672,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NativeChartExample;
+				SWIFT_OBJC_BRIDGING_HEADER = "NativeChartExample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
