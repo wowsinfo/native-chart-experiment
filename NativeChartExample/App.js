@@ -10,6 +10,7 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
+  Text
 } from 'react-native';
 import { NativeChart } from 'react-native-native-chart';
 
@@ -17,6 +18,7 @@ const App = () => {
   const { root } = styles
   return (
     <SafeAreaView style={root}>
+      <Text>Hello</Text>
       <NativeChart />
     </SafeAreaView>
   );
