@@ -27,7 +27,15 @@ open class NativeChart: RCTViewManager, ChartViewDelegate {
     
     override open func view() -> UIView! {
         let view = UIView()
+        view.sizeToFit()
         view.addSubview(battleLineChart)
+        
+        // Setup constraints for chart
+        battleLineChart.translatesAutoresizingMaskIntoConstraints = false
+        battleLineChart.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        battleLineChart.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        battleLineChart.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        battleLineChart.heightAnchor.constraint(equalToConstant: CGFloat(300)).isActive = true
         return view
     }
     

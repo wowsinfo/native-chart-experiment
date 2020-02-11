@@ -18,7 +18,6 @@ const App = () => {
   const { root } = styles
   return (
     <SafeAreaView style={root}>
-      <Text>Hello</Text>
       <NativeChart />
     </SafeAreaView>
   );
@@ -27,8 +26,6 @@ const App = () => {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
   }
 });
 
