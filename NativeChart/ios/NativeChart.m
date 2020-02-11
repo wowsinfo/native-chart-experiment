@@ -1,19 +1,4 @@
-#import "NativeChart.h"
+#import <React/RCTViewManager.h>
 
-@implementation NativeChart
-
-RCT_EXPORT_MODULE()
-
-- (UIView *)view
-{
-    // TODO: Implement some actually useful functionality
-    UILabel * label = [[UILabel alloc] init];
-    [label setTextColor:[UIColor redColor]];
-    [label setText: @"Hello World"];
-    [label sizeToFit];
-    UIView * wrapper = [[UIView alloc] init];
-    [wrapper addSubview:label];
-    return wrapper;
-}
-
+@interface RCT_EXTERN_MODULE(NativeChart, RCTViewManager)
 @end

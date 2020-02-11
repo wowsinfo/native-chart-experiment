@@ -35,7 +35,6 @@ target 'NativeChartExample' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   pod 'react-native-native-chart', :path => '../../NativeChart'
-  pod 'Charts'
 
   target 'NativeChartExampleTests' do
     inherit! :search_paths
