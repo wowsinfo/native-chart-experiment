@@ -1,6 +1,6 @@
 //
 //  NativeChart.swift
-//  react-native-native-chart
+//  NativeChart
 //
 //  Created by Yiheng Quan on 11/2/20.
 //
@@ -27,7 +27,6 @@ open class NativeChart: RCTViewManager, ChartViewDelegate {
     
     override open func view() -> UIView! {
         let view = UIView()
-        view.sizeToFit()
         view.addSubview(battleLineChart)
         
         // Setup constraints for chart
