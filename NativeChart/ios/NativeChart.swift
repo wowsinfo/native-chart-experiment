@@ -39,6 +39,7 @@ class NativeChart: RCTViewManager, ChartViewDelegate {
 //        print(battleLineChart.bounds)
         
         let label = UILabel()
+        label.contentMode = .scaleAspectFit
         label.text = "Hello"
         label.sizeToFit()
         view.addSubview(label)
@@ -46,7 +47,7 @@ class NativeChart: RCTViewManager, ChartViewDelegate {
         print(label.bounds)
         
  
-        return label
+        return view
     }
     
     private func lineChartOptimised(chart: LineChartView) {
