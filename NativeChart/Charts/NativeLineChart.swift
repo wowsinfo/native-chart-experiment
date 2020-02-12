@@ -36,7 +36,8 @@ class NativeLineChart : LineChartView {
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Recent Battle self")
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Recent Battle")
+        
         chartDataSet.setColor(colour)
         chartDataSet.setCircleColor(colour)
         chartDataSet.circleRadius = 3.0
@@ -49,12 +50,15 @@ class NativeLineChart : LineChartView {
         average.labelPosition = .bottomRight
         average.lineWidth = 0.5
         average.lineColor = colour
+        average.valueTextColor = UIColor.white
         self.rightAxis.addLimitLine(average)
     }
     
     private func lineChartOptimised() {
         self.noDataText = "No Information are provided"
-        self.isUserInteractionEnabled = false
+        self.highlightPerTapEnabled = false
+        self.highlightPerDragEnabled = false
+        self.setScaleEnabled(false)
         self.chartDescription?.text = ""
         
         self.xAxis.labelPosition = .bottom
@@ -69,5 +73,8 @@ class NativeLineChart : LineChartView {
         self.leftAxis.drawLabelsEnabled = true
         self.leftAxis.drawGridLinesEnabled = false
         self.leftAxis.drawAxisLineEnabled = true
+        // White text
+        self.leftAxis.labelTextColor = UIColor.white
+        self.legend.textColor = UIColor.white
     }
 }

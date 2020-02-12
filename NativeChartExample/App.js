@@ -35,7 +35,14 @@ class App extends React.Component {
     const { root } = styles
     return (
       <SafeAreaView style={root}>
-        <NativeChart style={{height: 300, margin: 8}} chartData={this.state.data}/>
+        <ScrollView style={root} >
+          <NativeChart style={{height: 300, margin: 8}} chartData={this.state.data}/>
+          <NativeChart style={{height: 300, margin: 8}} chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]}/>
+          <NativeChart style={{height: 300, margin: 8}} chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]}/>
+          <NativeChart style={{height: 300, margin: 8}} chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]}/>
+          <NativeChart style={{height: 300, margin: 8}} chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]}/>
+          <NativeChart style={{height: 300, margin: 8, backgroundColor: 'black'}} chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]}/>
+        </ScrollView>
       </SafeAreaView>
     );
   }
@@ -44,7 +51,6 @@ class App extends React.Component {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    justifyContent: 'center',
   }
 });
 
