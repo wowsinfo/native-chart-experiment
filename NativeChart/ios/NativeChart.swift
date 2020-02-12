@@ -9,7 +9,7 @@ import Charts
 
 @objc(NativeChart)
 @objcMembers
-class NativeChart: RCTViewManager, ChartViewDelegate {
+open class NativeChart: RCTViewManager, ChartViewDelegate {
     
     var data: [Double] = [
         0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0
@@ -19,11 +19,13 @@ class NativeChart: RCTViewManager, ChartViewDelegate {
         return true
     }
     
+    open func setChartData(_ data: NSArray) {
+        print(data)
+    }
+    
     override open func view() -> UIView! {
-        let screen = UIScreen.main.bounds
+        // let screen = UIScreen.main.bounds
         let view = UIView()
-        print("View")
-        print(view.bounds)
 
 //        let battleLineChart = LineChartView()
 //        battleLineChart.delegate = self
@@ -39,13 +41,9 @@ class NativeChart: RCTViewManager, ChartViewDelegate {
 //        print(battleLineChart.bounds)
         
         let label = UILabel()
-        label.contentMode = .scaleAspectFit
         label.text = "Hello"
         label.sizeToFit()
         view.addSubview(label)
-        print("Label")
-        print(label.bounds)
-        
  
         return view
     }
