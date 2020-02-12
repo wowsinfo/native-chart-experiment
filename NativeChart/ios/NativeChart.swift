@@ -8,22 +8,22 @@
 import Charts
 
 @objc(NativeChart)
-open class NativeChart: RCTViewManager, ChartViewDelegate {
-    private var battleLineChart: LineChartView
-    var data: [Double] = []
+@objcMembers
+class NativeChart: RCTViewManager, ChartViewDelegate {
     
-    public override init() {
-        battleLineChart = LineChartView()
-        super.init()
-        battleLineChart.delegate = self
-        setupBattleChart(chart: battleLineChart)
-    }
+    var data: [Double] = [
+        0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0
+    ]
 
     open override class func requiresMainQueueSetup() -> Bool {
         return true
     }
     
     override open func view() -> UIView! {
+        let battleLineChart = LineChartView()
+        battleLineChart.delegate = self
+        setupBattleChart(chart: battleLineChart)
+        
         let view = UIView()
         view.addSubview(battleLineChart)
         
@@ -61,7 +61,7 @@ open class NativeChart: RCTViewManager, ChartViewDelegate {
         
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<data.count {
-            let dataEntry = BarChartDataEntry(x: Double(i), y: data[i])
+            let dataEntry = ChartDataEntry(x: Double(i), y: data[i])
             dataEntries.append(dataEntry)
         }
         
@@ -70,7 +70,7 @@ open class NativeChart: RCTViewManager, ChartViewDelegate {
         chartDataSet.setCircleColor(colour)
         chartDataSet.circleRadius = 3.0
         chartDataSet.drawValuesEnabled = false
-        let chartData = LineChartData.init(dataSets: [chartDataSet])
+        let chartData = LineChartData(dataSets: [chartDataSet])
         chart.data = chartData
         
         let avg = data.reduce(0.0, { x, y in x + y }) / Double(data.count)
