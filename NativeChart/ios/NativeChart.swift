@@ -20,25 +20,33 @@ class NativeChart: RCTViewManager, ChartViewDelegate {
     }
     
     override open func view() -> UIView! {
-        let battleLineChart = LineChartView()
-        battleLineChart.delegate = self
-        setupBattleChart(chart: battleLineChart)
-        battleLineChart.translatesAutoresizingMaskIntoConstraints = false
-        battleLineChart.leftAnchor.constraint(equalTo: self.view()!.leftAnchor).isActive = true
-        battleLineChart.topAnchor.constraint(equalTo: self.view()!.topAnchor).isActive = true
-        battleLineChart.rightAnchor.constraint(equalTo: self.view()!.rightAnchor).isActive = true
-        battleLineChart.heightAnchor.constraint(equalToConstant: CGFloat(300)).isActive = true
-        return battleLineChart
+        let screen = UIScreen.main.bounds
         let view = UIView()
-        view.addSubview(battleLineChart)
+        print("View")
+        print(view.bounds)
+
+//        let battleLineChart = LineChartView()
+//        battleLineChart.delegate = self
+//        setupBattleChart(chart: battleLineChart)
+//        view.addSubview(battleLineChart)
+//
+//        battleLineChart.translatesAutoresizingMaskIntoConstraints = false
+//         battleLineChart.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+//         battleLineChart.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//         battleLineChart.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+//         battleLineChart.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        print("Chart")
+//        print(battleLineChart.bounds)
         
-        // Setup constraints for chart
-        battleLineChart.translatesAutoresizingMaskIntoConstraints = false
-        battleLineChart.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        battleLineChart.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        battleLineChart.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        battleLineChart.heightAnchor.constraint(equalToConstant: CGFloat(300)).isActive = true
-        return view
+        let label = UILabel()
+        label.text = "Hello"
+        label.sizeToFit()
+        view.addSubview(label)
+        print("Label")
+        print(label.bounds)
+        
+ 
+        return label
     }
     
     private func lineChartOptimised(chart: LineChartView) {

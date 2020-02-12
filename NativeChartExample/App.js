@@ -19,21 +19,27 @@ import { NativeChart } from 'react-native-native-chart';
 const App = () => {
   const { root } = styles
   return (
-    <ScrollView>
+    <View style={root}>
+      <View style={{height: 20}}>
+        <NativeChart data={new Array([20.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0])}/>
+      </View>
+      <View>
+        <NativeChart data={new Array([20.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0])}/>
+      </View>
       <View>
         <NativeChart data={new Array([20.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0])}/>
       </View>
       <View>
         <NativeChart data={new Array([20.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0])}/>
       </View>
-      <Text>Hello</Text>
       <View>
         <NativeChart data={new Array([20.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0])}/>
       </View>
-      <View>
-        <NativeChart data={new Array([20.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0])}/>
-      </View>
-    </ScrollView>
+      <NativeChart data={new Array([20.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0])}/>
+      <NativeChart data={new Array([20.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0])}/>
+      <NativeChart data={new Array([20.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0])}/>
+      <NativeChart data={new Array([20.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0])}/>
+    </View>
   );
 };
 
