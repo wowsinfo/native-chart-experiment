@@ -36,7 +36,7 @@ class App extends React.Component {
     return (
       <SafeAreaView style={root}>
         <ScrollView style={root} >
-          <LineChart style={{height: 300, margin: 8}} 
+          <LineChart style={{height: 300, margin: 8}}
             chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]} 
             legendLabel="Black" darkMode={false} themeColor="#000000"/>
           <LineChart style={{height: 300, margin: 8, backgroundColor: 'black'}} 

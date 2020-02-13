@@ -32,4 +32,4 @@ class LineChart extends React.Component {
   }
 }
 
-export { LineChart };
+export default LineChart;
