@@ -9,72 +9,76 @@ import Charts
 
 class NativeLineChart : LineChartView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        lineChartOptimised()
+    @objc var chartData: [Double] = [] {
+        didSet {
+            
+        }
+    }
+    
+    @objc var legendLabel: String = ""
+    @objc var darkMode: Bool = false
+    @objc var themeColor: UIColor = UIColor.blue
+    
+    override func didSetProps(_ changedProps: [String]!) {
+        super.didSetProps(changedProps)
+        self.updateChartData()
+    }
+    
+    init() {
+        super.init(frame: CGRect())
+        setupLineChart()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc var chartData: [Double] = [] {
-        didSet {
-            print(self.chartData)
-            self.setupBattleChart()
-        }
-    }
-    
-    private func setupBattleChart() {
-        // Remove all lines
+    private func updateChartData() {
+        // Remove all lines to prevent drawing multiple lines
         self.rightAxis.removeAllLimitLines()
-        let colour = UIColor(red: 35/255, green: 135/255, blue: 255/255, alpha: 1.0)
+
+        let formattedData = self.chartData.enumerated().map({ i, element in ChartDataEntry(x: Double(i), y: element)})
         
-        var dataEntries: [ChartDataEntry] = []
-        for i in 0..<chartData.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: chartData[i])
-            dataEntries.append(dataEntry)
-        }
-        
-        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Recent Battle")
-        
-        chartDataSet.setColor(colour)
-        chartDataSet.setCircleColor(colour)
+        let chartDataSet = LineChartDataSet(entries: formattedData, label: legendLabel)
+        chartDataSet.setColor(themeColor)
+        chartDataSet.setCircleColor(themeColor)
         chartDataSet.circleRadius = 3.0
         chartDataSet.drawValuesEnabled = false
         let chartDataFormatted = LineChartData(dataSets: [chartDataSet])
         self.data = chartDataFormatted
         
-        let avg = chartData.reduce(0.0, { x, y in x + y }) / Double(chartData.count)
-        let average = ChartLimitLine(limit: avg, label: String(format: "%.1f", avg))
-        average.labelPosition = .bottomRight
-        average.lineWidth = 0.5
-        average.lineColor = colour
-        average.valueTextColor = UIColor.white
-        self.rightAxis.addLimitLine(average)
+        // Update theme colour
+        let textColour = darkMode ? UIColor.white : UIColor.black
+        self.leftAxis.labelTextColor = textColour
+        self.legend.textColor = textColour
+        print(legendLabel, darkMode, themeColor)
     }
-    
-    private func lineChartOptimised() {
+
+    /** Some basic styling for LineChartView */
+    private func setupLineChart() {
+        // Text related
         self.noDataText = "No Information are provided"
+        self.chartDescription?.text = ""
+        
+        // Disable zoom and interaction
         self.highlightPerTapEnabled = false
         self.highlightPerDragEnabled = false
         self.setScaleEnabled(false)
-        self.chartDescription?.text = ""
-        
+
+        // Custom style for xAxia
         self.xAxis.labelPosition = .bottom
         self.xAxis.setLabelCount(chartData.count, force: false)
         self.xAxis.drawGridLinesEnabled = false
         self.xAxis.drawLabelsEnabled = false
         
+        // Custom style for rightAxis
         self.rightAxis.drawLabelsEnabled = false
         self.rightAxis.drawGridLinesEnabled = false
         self.rightAxis.drawAxisLineEnabled = false
         
+        // Custom style for leftAxis
         self.leftAxis.drawLabelsEnabled = true
         self.leftAxis.drawGridLinesEnabled = false
         self.leftAxis.drawAxisLineEnabled = true
-        // White text
-        self.leftAxis.labelTextColor = UIColor.white
-        self.legend.textColor = UIColor.white
     }
 }

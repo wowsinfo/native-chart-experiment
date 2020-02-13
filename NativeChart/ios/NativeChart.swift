@@ -15,6 +15,6 @@ open class NativeChart: RCTViewManager, ChartViewDelegate {
     }
     
     override open func view() -> UIView! {
-        return NativeLineChart(frame: CGRect())
+        return NativeLineChart()
     }
 }
