@@ -14,7 +14,7 @@ import {
   ScrollView,
   Text
 } from 'react-native';
-import { NativeChart } from 'react-native-native-chart';
+import { LineChart } from 'react-native-native-chart';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 class App extends React.Component {
@@ -37,10 +37,10 @@ class App extends React.Component {
     return (
       <SafeAreaView style={root}>
         <ScrollView style={root} >
-          <NativeChart style={{height: 300, margin: 8}} 
+          <LineChart style={{height: 300, margin: 8}} 
             chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]} 
             legendLabel="Black" darkMode={false} themeColor="#000000"/>
-          <NativeChart style={{height: 300, margin: 8, backgroundColor: 'black'}} 
+          <LineChart style={{height: 300, margin: 8, backgroundColor: 'black'}} 
             chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]} 
             legendLabel="White" darkMode themeColor="#FFFFFF"/>
         </ScrollView>
