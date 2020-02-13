@@ -37,8 +37,10 @@ class NativeLineChart : LineChartView {
         // Remove all lines to prevent drawing multiple lines
         self.rightAxis.removeAllLimitLines()
 
+        // Map double to ChartDataEntry
         let formattedData = self.chartData.enumerated().map({ i, element in ChartDataEntry(x: Double(i), y: element)})
         
+        // Setup data and colour to chart
         let realThemeColour = UIColor(hex: themeColor)!
         let chartDataSet = LineChartDataSet(entries: formattedData, label: legendLabel)
         chartDataSet.setColor(realThemeColour)
@@ -52,7 +54,16 @@ class NativeLineChart : LineChartView {
         let textColour = darkMode ? UIColor.white : UIColor.black
         self.leftAxis.labelTextColor = textColour
         self.legend.textColor = textColour
-        print(legendLabel, darkMode, themeColor)
+        
+        // Add average line
+        let avg = chartData.reduce(0.0, { x, y in x + y }) / Double(chartData.count)
+        let average = ChartLimitLine(limit: avg, label: String(format: "%.1f", avg))
+        average.labelPosition = .bottomRight
+        average.lineWidth = 0.5
+        average.valueTextColor = textColour
+        // Fit to theme colour
+        average.lineColor = realThemeColour
+        self.rightAxis.addLimitLine(average)
     }
 
     /** Some basic styling for LineChartView */
