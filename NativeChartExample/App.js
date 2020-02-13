@@ -39,7 +39,7 @@ class App extends React.Component {
         <ScrollView style={root} >
           <NativeChart style={{height: 300, margin: 8}} 
             chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]} 
-            legendLabel="Hello World" darkMode={false} themeColor='#000000'/>
+            legendLabel="Hello World" darkMode={false} themeColor='#52FFAB'/>
           {/* <NativeChart style={{height: 300, margin: 8, backgroundColor: 'black'}} chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]} legendText="Hello"/> */}
         </ScrollView>
       </SafeAreaView>

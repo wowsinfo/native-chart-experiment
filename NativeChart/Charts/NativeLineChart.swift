@@ -17,7 +17,7 @@ class NativeLineChart : LineChartView {
     
     @objc var legendLabel: String = ""
     @objc var darkMode: Bool = false
-    @objc var themeColor: UIColor = UIColor.blue
+    @objc var themeColor: String = "#FFFFFF"
     
     override func didSetProps(_ changedProps: [String]!) {
         super.didSetProps(changedProps)
@@ -39,9 +39,10 @@ class NativeLineChart : LineChartView {
 
         let formattedData = self.chartData.enumerated().map({ i, element in ChartDataEntry(x: Double(i), y: element)})
         
+        let realThemeColour = UIColor(hex: themeColor)!
         let chartDataSet = LineChartDataSet(entries: formattedData, label: legendLabel)
-        chartDataSet.setColor(themeColor)
-        chartDataSet.setCircleColor(themeColor)
+        chartDataSet.setColor(realThemeColour)
+        chartDataSet.setCircleColor(realThemeColour)
         chartDataSet.circleRadius = 3.0
         chartDataSet.drawValuesEnabled = false
         let chartDataFormatted = LineChartData(dataSets: [chartDataSet])
