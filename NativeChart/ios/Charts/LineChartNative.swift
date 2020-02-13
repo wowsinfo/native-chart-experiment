@@ -7,7 +7,7 @@
 
 import Charts
 
-class NativeLineChart : LineChartView {
+class LineChartNative : LineChartView {
     
     @objc var chartData: [Double] = [] {
         didSet {
