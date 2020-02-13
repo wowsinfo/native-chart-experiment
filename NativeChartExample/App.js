@@ -10,11 +10,11 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  View,
+  Button,
   ScrollView,
   Text
 } from 'react-native';
-import { LineChart } from '../NativeChart';
+import { LineChart } from 'react-native-native-chart';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,13 +32,12 @@ class App extends React.Component {
   }
 
   render() {
-    const { root } = styles
+    const { root } = styles;
+    console.log(LineChart);
     return (
       <SafeAreaView style={root}>
         <ScrollView style={root} >
-          <LineChart style={{height: 300, margin: 8}}
-            chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]} 
-            legendLabel="Black" darkMode={false} themeColor="#000000"/>
+          <Button ></Button>
           <LineChart style={{height: 300, margin: 8, backgroundColor: 'black'}} 
             chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]} 
             legendLabel="White" darkMode themeColor="#FFFFFF"/>

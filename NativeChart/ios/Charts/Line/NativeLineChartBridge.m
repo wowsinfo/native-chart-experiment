@@ -1,6 +1,6 @@
 #import <React/RCTViewManager.h>
 
-@interface RCT_EXTERN_MODULE(NativeLineChart, RCTViewManager)
+@interface RCT_EXTERN_MODULE(NativeLineChartBridge, RCTViewManager)
 
 RCT_EXPORT_VIEW_PROPERTY(chartData, NSArray)
 RCT_EXPORT_VIEW_PROPERTY(legendLabel, NSString)

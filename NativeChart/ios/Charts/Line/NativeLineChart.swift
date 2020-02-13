@@ -7,14 +7,9 @@
 
 import Charts
 
-class LineChartNative : LineChartView {
+class NativeLineChart : LineChartView {
     
-    @objc var chartData: [Double] = [] {
-        didSet {
-            
-        }
-    }
-    
+    @objc var chartData: [Double] = []
     @objc var legendLabel: String = ""
     @objc var darkMode: Bool = false
     @objc var themeColor: String = "#FFFFFF"

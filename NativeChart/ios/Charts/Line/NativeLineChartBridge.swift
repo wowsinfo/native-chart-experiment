@@ -7,14 +7,14 @@
 
 import Charts
 
-@objc(NativeLineChart)
+@objc(NativeLineChartBridge)
 @objcMembers
-open class NativeLineChart: RCTViewManager {
+open class NativeLineChartBridge: RCTViewManager {
     open override class func requiresMainQueueSetup() -> Bool {
         return true
     }
     
     override open func view() -> UIView! {
-        return LineChartNative()
+        return NativeLineChart()
     }
 }
