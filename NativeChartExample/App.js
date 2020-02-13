@@ -14,8 +14,7 @@ import {
   ScrollView,
   Text
 } from 'react-native';
-import { LineChart } from 'react-native-native-chart';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { LineChart } from '../NativeChart';
 
 class App extends React.Component {
   constructor(props) {
