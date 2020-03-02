@@ -7,7 +7,7 @@
 
 import Charts
 
-class NativeLineChart : LineChartView {
+class NativeLineChart : LineChartView, OptimisedBarLineChart {
     
     @objc var chartData: [Double] = []
     @objc var legendLabel: String = ""
@@ -16,19 +16,20 @@ class NativeLineChart : LineChartView {
     
     override func didSetProps(_ changedProps: [String]!) {
         super.didSetProps(changedProps)
-        self.updateChartData()
+        self.updateChart()
     }
     
     init() {
         super.init(frame: CGRect())
-        setupLineChart()
+        setupChart(chart: self)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func updateChartData() {
+    /** Update chart data whenever props are passed from js */
+    internal func updateChart() {
         // Remove all lines to prevent drawing multiple lines
         self.rightAxis.removeAllLimitLines()
 
@@ -62,30 +63,30 @@ class NativeLineChart : LineChartView {
     }
 
     /** Some basic styling for LineChartView */
-    private func setupLineChart() {
+    internal func setupChart(chart: BarLineChartViewBase) {
         // Text related
-        self.noDataText = "No Information are provided"
-        self.chartDescription?.text = ""
+        chart.noDataText = "No Information are provided"
+        chart.chartDescription?.text = ""
         
         // Disable zoom and interaction
-        self.highlightPerTapEnabled = false
-        self.highlightPerDragEnabled = false
-        self.setScaleEnabled(false)
+        chart.highlightPerTapEnabled = false
+        chart.highlightPerDragEnabled = false
+        chart.setScaleEnabled(false)
 
         // Custom style for xAxia
-        self.xAxis.labelPosition = .bottom
-        self.xAxis.setLabelCount(chartData.count, force: false)
-        self.xAxis.drawGridLinesEnabled = false
-        self.xAxis.drawLabelsEnabled = false
+        chart.xAxis.labelPosition = .bottom
+        chart.xAxis.setLabelCount(chartData.count, force: false)
+        chart.xAxis.drawGridLinesEnabled = false
+        chart.xAxis.drawLabelsEnabled = false
         
         // Custom style for rightAxis
-        self.rightAxis.drawLabelsEnabled = false
-        self.rightAxis.drawGridLinesEnabled = false
-        self.rightAxis.drawAxisLineEnabled = false
+        chart.rightAxis.drawLabelsEnabled = false
+        chart.rightAxis.drawGridLinesEnabled = false
+        chart.rightAxis.drawAxisLineEnabled = false
         
         // Custom style for leftAxis
-        self.leftAxis.drawLabelsEnabled = true
-        self.leftAxis.drawGridLinesEnabled = false
-        self.leftAxis.drawAxisLineEnabled = true
+        chart.leftAxis.drawLabelsEnabled = true
+        chart.leftAxis.drawGridLinesEnabled = false
+        chart.leftAxis.drawAxisLineEnabled = true
     }
 }
