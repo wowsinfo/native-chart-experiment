@@ -75,7 +75,6 @@ class NativeLineChart : LineChartView, OptimisedBarLineChart {
 
         // Custom style for xAxia
         chart.xAxis.labelPosition = .bottom
-        chart.xAxis.setLabelCount(chartData.count, force: false)
         chart.xAxis.drawGridLinesEnabled = false
         chart.xAxis.drawLabelsEnabled = false
         

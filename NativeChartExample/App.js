@@ -13,7 +13,7 @@ import {
   ScrollView,
   requireNativeComponent
 } from 'react-native';
-import { LineChart, BarChart } from 'react-native-native-chart';
+import { LineChart, BarChart, HorizontalBarChart } from 'react-native-native-chart';
 
 class App extends React.Component {
   constructor(props) {
@@ -38,6 +38,9 @@ class App extends React.Component {
             chartData={linedata} 
             legendLabel="White" darkMode={darkMode} themeColor="#8888FF"/>
           <BarChart style={{height: 300, margin: 8}}
+            chartData={bardata} xAxisLabels={barLabels}
+            legendLabel="White" darkMode={darkMode} themeColor="#6666FF"/>
+          <HorizontalBarChart style={{height: 300, margin: 8}}
             chartData={bardata} xAxisLabels={barLabels}
             legendLabel="White" darkMode={darkMode} themeColor="#6666FF"/>
         </ScrollView>
