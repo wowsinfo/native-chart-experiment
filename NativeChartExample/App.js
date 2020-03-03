@@ -20,10 +20,10 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      linedata: [0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0],
+      linedata: [200.0, 0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 300, 40.0, 10.0, 20.0, 45.0, 50.0, 100.0],
       bardata: [10, 50, 60, 70, 200, 500, 50, 60, 70, 80],
       barLabels: ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"],
-      darkMode: false
+      darkMode: true
     }
   }
 
@@ -36,10 +36,10 @@ class App extends React.Component {
         <ScrollView style={root} >
           <LineChart style={{height: 300, margin: 8}}
             chartData={linedata} 
-            legendLabel="White" darkMode={darkMode} themeColor="#123456"/>
+            legendLabel="White" darkMode={darkMode} themeColor="#8888FF"/>
           <BarChart style={{height: 300, margin: 8}}
             chartData={bardata} xAxisLabels={barLabels}
-            legendLabel="White" darkMode={darkMode} themeColor="#123456"/>
+            legendLabel="White" darkMode={darkMode} themeColor="#6666FF"/>
         </ScrollView>
       </SafeAreaView>
     );

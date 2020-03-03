@@ -30,13 +30,16 @@ class NativeBarChart : BarChartView, OptimisedBarLineChart {
     }
     
     func updateChart() {
+        let textColour = darkMode ? UIColor.white : UIColor.black
+        
         // Map double to ChartDataEntry
-        let formattedData = self.chartData.enumerated().map({ i, element in BarChartDataEntry(x: Double(i), y: element)})
+        let formattedData = self.chartData.enumerated().map({i, element in BarChartDataEntry(x: Double(i), y: element)})
         
         let chartDataSet = BarChartDataSet(entries: formattedData, label: legendLabel)
-//        chartDataSet.value
-        chartDataSet.colors = ChartColorTemplates.material()
+        // Use only theme colour
+        chartDataSet.colors = [UIColor(hex: themeColor)!]
         chartDataSet.valueFont = UIFont.systemFont(ofSize: 12)
+        chartDataSet.valueColors = [textColour]
         let chartData = BarChartData(dataSets: [chartDataSet])
         
         // Remove fractions
@@ -45,11 +48,10 @@ class NativeBarChart : BarChartView, OptimisedBarLineChart {
         chartData.setValueFormatter(DefaultValueFormatter(formatter: format))
         
         // Update chart data
-        self.data = chartData
         self.xAxis.valueFormatter = IndexAxisValueFormatter(values: xAxisLabels)
+        self.data = chartData
         
         // Update theme colour
-        let textColour = darkMode ? UIColor.white : UIColor.black
         self.leftAxis.labelTextColor = textColour
         self.legend.textColor = textColour
     }
