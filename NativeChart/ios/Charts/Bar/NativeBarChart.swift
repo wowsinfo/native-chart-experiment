@@ -21,6 +21,7 @@ class NativeBarChart : BarChartView, OptimisedBarLineChart {
     
     init() {
         super.init(frame: CGRect())
+        // hellio
         setupChart(chart: self)
     }
     
