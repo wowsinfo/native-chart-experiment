@@ -4,19 +4,17 @@ package org.github.henryquan.nativechart
 // import android.support.v7.widget.AppCompatCheckBox;
 // AppCompatCheckBox import for React Native 0.60(+):
 import android.view.View
-import androidx.appcompat.widget.AppCompatCheckBox
 import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
+import org.github.henryquan.nativechart.LineChart.NativeLineChart
 
-class NativeLineChartManager : SimpleViewManager<View>() {
+class NativeLineChartManager : SimpleViewManager<NativeLineChart>() {
     override fun getName(): String {
         return REACT_CLASS
     }
 
-    public override fun createViewInstance(c: ThemedReactContext): View {
-        val cb = AppCompatCheckBox(c)
-        cb.setChecked(true)
-        return cb
+    public override fun createViewInstance(c: ThemedReactContext): NativeLineChart {
+        return NativeLineChart(c)
     }
 
     companion object {
