@@ -1,14 +1,12 @@
-package org.github.henryquan.nativechart
+package org.github.henryquan.nativechart.pie
 
 // AppCompatCheckBox import for React Native pre-0.60:
 // import android.support.v7.widget.AppCompatCheckBox;
 // AppCompatCheckBox import for React Native 0.60(+):
-import android.view.View
 import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
-import org.github.henryquan.nativechart.LineChart.NativeLineChart
 
-class NativeLineChartManager : SimpleViewManager<NativeLineChart>() {
+class NativePieChartManager : SimpleViewManager<NativeLineChart>() {
     override fun getName(): String {
         return REACT_CLASS
     }
@@ -18,6 +16,6 @@ class NativeLineChartManager : SimpleViewManager<NativeLineChart>() {
     }
 
     companion object {
-        const val REACT_CLASS = "NativeLineChart"
+        const val REACT_CLASS = "NativePieChart"
     }
 }
