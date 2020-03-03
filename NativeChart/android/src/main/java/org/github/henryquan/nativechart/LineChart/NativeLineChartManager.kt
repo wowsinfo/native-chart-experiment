@@ -1,4 +1,4 @@
-package com.reactlibrary
+package org.github.henryquan.nativechart
 
 // AppCompatCheckBox import for React Native pre-0.60:
 // import android.support.v7.widget.AppCompatCheckBox;

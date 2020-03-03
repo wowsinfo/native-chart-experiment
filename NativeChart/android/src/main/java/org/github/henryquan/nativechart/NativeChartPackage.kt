@@ -1,4 +1,4 @@
-package com.reactlibrary
+package org.github.henryquan.nativechart
 
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.JavaScriptModule
@@ -18,7 +18,7 @@ class NativeChartPackage : ReactPackage {
 
     override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
         return listOf<ViewManager<*, *>>(
-                NativeChartManager()
+                NativeLineChartManager()
         )
     }
 }
