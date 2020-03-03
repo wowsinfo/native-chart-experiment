@@ -23,7 +23,7 @@ class App extends React.Component {
       linedata: [200.0, 0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 300, 40.0, 10.0, 20.0, 45.0, 50.0, 100.0],
       bardata: [10, 50, 60, 70, 200, 500, 50, 60, 70, 80],
       barLabels: ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"],
-      darkMode: true
+      darkMode: false
     }
   }
 

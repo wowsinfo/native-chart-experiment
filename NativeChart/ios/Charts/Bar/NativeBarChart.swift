@@ -47,11 +47,15 @@ class NativeBarChart : BarChartView, OptimisedBarLineChart {
         format.minimumFractionDigits = 0
         chartData.setValueFormatter(DefaultValueFormatter(formatter: format))
         
-        // Update chart data
+        // Update xAxis label
         self.xAxis.valueFormatter = IndexAxisValueFormatter(values: xAxisLabels)
+        self.xAxis.setLabelCount(self.xAxisLabels.count, force: false)
+        
+        // Update chart data
         self.data = chartData
         
         // Update theme colour
+        self.xAxis.labelTextColor = textColour
         self.leftAxis.labelTextColor = textColour
         self.legend.textColor = textColour
     }
@@ -68,7 +72,6 @@ class NativeBarChart : BarChartView, OptimisedBarLineChart {
 
         // Custom style for xAxia
         chart.xAxis.labelPosition = .bottom
-        chart.xAxis.setLabelCount(chartData.count, force: false)
         chart.xAxis.drawGridLinesEnabled = false
         
         // Custom style for rightAxis
@@ -80,5 +83,7 @@ class NativeBarChart : BarChartView, OptimisedBarLineChart {
         chart.leftAxis.drawLabelsEnabled = false
         chart.leftAxis.drawGridLinesEnabled = false
         chart.leftAxis.drawAxisLineEnabled = false
+        // Don't need to show the legend for this
+        chart.legend.enabled = false
     }
 }
