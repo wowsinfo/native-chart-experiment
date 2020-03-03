@@ -10,7 +10,8 @@
 @interface RCT_EXTERN_MODULE(NativeBarChartManager, RCTViewManager)
 
 RCT_EXPORT_VIEW_PROPERTY(chartData, NSArray)
-RCT_EXPORT_VIEW_PROPERTY(legendLabel, NSArray)
+RCT_EXPORT_VIEW_PROPERTY(legendLabel, NSString)
+RCT_EXPORT_VIEW_PROPERTY(xAxisLabels, NSArray)
 RCT_EXPORT_VIEW_PROPERTY(darkMode, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(themeColor, NSString)
 
