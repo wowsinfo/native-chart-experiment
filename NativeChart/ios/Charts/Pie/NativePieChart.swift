@@ -32,8 +32,8 @@ class NativePieChart : PieChartView {
         
         // Get data set
         let chartDataSet = PieChartDataSet(entries: formattedData, label: "")
-        chartDataSet.colors = generateRandomColours(count: chartData.count)
-        chartDataSet.drawIconsEnabled = false
+        chartDataSet.colors = bestChartColours(count: chartData.count)
+        chartDataSet.valueTextColor = UIColor.black
         let chartData = PieChartData(dataSets: [chartDataSet])
         
         // No fraction
@@ -49,15 +49,42 @@ class NativePieChart : PieChartView {
         self.legend.textColor = textColour
     }
     
-    func generateRandomColours(count: Int) -> [UIColor] {
-        // Generate random colours
-        return Array(repeating: 0, count: count).map({i in
-            // Dark colours only
-            let r = CGFloat.random(in: 0...255) / 255.0
-            let g = CGFloat.random(in: 0...255) / 255.0
-            let b = CGFloat.random(in: 0...255) / 255.0
-            return UIColor(red: r, green: g, blue: b, alpha: 1.0)
-        });
+    /** It generates random coliour s or uses preset colours */
+    func bestChartColours(count: Int) -> [UIColor] {
+        var bestColours: [UIColor] = []
+
+        if count <= 4 {
+            bestColours += ChartColorTemplates.material()
+        }
+
+        if count <= 9 {
+            bestColours += ChartColorTemplates.joyful()
+        }
+            
+        if count <= 14 {
+            bestColours += ChartColorTemplates.liberty()
+        }
+            
+        if count <= 19 {
+            bestColours += ChartColorTemplates.pastel()
+        }
+            
+        if count <= 24 {
+            bestColours += ChartColorTemplates.vordiplom()
+        }
+        
+        if count > 24 {
+            // Generate random colours if there are too many entries
+            bestColours += Array(repeating: 0, count: count).map({i in
+                // Dark colours only
+                let r = CGFloat.random(in: 0...255) / 255.0
+                let g = CGFloat.random(in: 0...255) / 255.0
+                let b = CGFloat.random(in: 0...255) / 255.0
+                return UIColor(red: r, green: g, blue: b, alpha: 1.0)
+            });
+        }
+        
+        return bestColours
     }
     
     func setupChart() {
