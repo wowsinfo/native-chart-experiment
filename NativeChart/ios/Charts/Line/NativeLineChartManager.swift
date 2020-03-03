@@ -7,9 +7,9 @@
 
 import Charts
 
-@objc(NativeLineChartBridge)
+@objc(NativeLineChartManager)
 @objcMembers
-open class NativeLineChartBridge: RCTViewManager {
+open class NativeLineChartManager: RCTViewManager {
     open override class func requiresMainQueueSetup() -> Bool {
         return true
     }

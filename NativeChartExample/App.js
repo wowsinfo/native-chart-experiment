@@ -13,9 +13,7 @@ import {
   ScrollView,
   requireNativeComponent
 } from 'react-native';
-import LineChart from 'react-native-native-chart';
-
-console.log(LineChart);
+import { LineChart } from 'react-native-native-chart';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,12 +22,6 @@ class App extends React.Component {
     this.state = {
       data: [0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0],
     }
-
-    setInterval(() => {
-      this.setState({
-        data: Array.from({length: 10}, () => Math.floor(Math.random() * 50))
-      });
-    }, 2000);
   }
 
   render() {
@@ -38,9 +30,9 @@ class App extends React.Component {
     return (
       <SafeAreaView style={root}>
         <ScrollView style={root} >
-          <LineChart style={{height: 300, margin: 8, backgroundColor: 'black'}} 
-            chartData={[0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 40.0, 10.0, 20.0, 45.0]} 
-            legendLabel="White" darkMode themeColor="#FFFFFF"/>
+          <LineChart style={{height: 300, margin: 8}}
+            chartData={this.state.data} 
+            legendLabel="White" darkMode={false} themeColor="#123456"/>
         </ScrollView>
       </SafeAreaView>
     );
