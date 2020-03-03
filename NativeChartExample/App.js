@@ -11,9 +11,9 @@ import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
-  requireNativeComponent
+  View
 } from 'react-native';
-import { LineChart, BarChart, HorizontalBarChart } from 'react-native-native-chart';
+import { LineChart, BarChart, HorizontalBarChart, PieChart } from 'react-native-native-chart';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class App extends React.Component {
 
     return (
       <SafeAreaView style={[root, darkMode ? {backgroundColor: 'black'} : null]}>
-        <ScrollView style={root} >
+        <ScrollView style={root}>
           <LineChart style={{height: 300, margin: 8}}
             chartData={linedata} 
             legendLabel="White" darkMode={darkMode} themeColor="#8888FF"/>
@@ -43,6 +43,11 @@ class App extends React.Component {
           <HorizontalBarChart style={{height: 300, margin: 8}}
             chartData={bardata} xAxisLabels={barLabels}
             legendLabel="White" darkMode={darkMode} themeColor="#6666FF"/>
+          <View pointerEvents='none'>
+            <PieChart style={{height: 300, margin: 8}}
+              chartData={bardata.concat(bardata)} dataLabels={barLabels.concat(barLabels)}
+              legendLabel="White" darkMode={darkMode} themeColor="#6666FF"/>
+          </View>
         </ScrollView>
       </SafeAreaView>
     );
