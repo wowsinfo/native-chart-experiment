@@ -15,8 +15,10 @@ class NativeLineChart(c: ThemedReactContext) : LineChart(c) {
 
     @ReactProp(name = "chartData")
     fun setMaxHighlightDistance(chart: NativeLineChart, chartData: ReadableArray) {
-        // Chart Data
         print(chartData)
+        // Remove all lines
+        this.axisRight.removeAllLimitLines()
+        
     }
 
     @ReactProp(name = "legendLabel")
