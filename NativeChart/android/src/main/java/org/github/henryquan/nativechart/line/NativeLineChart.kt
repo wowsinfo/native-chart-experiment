@@ -1,15 +1,10 @@
 package org.github.henryquan.nativechart.line
 
 import android.graphics.Color
-import com.facebook.infer.annotation.Mutable
-import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.uimanager.ThemedReactContext
-import com.facebook.react.uimanager.annotations.ReactProp
-import com.github.mikephil.charting.charts.BarLineChartBase
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.LimitLine
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.DataSet
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
@@ -17,31 +12,10 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 
 
 class NativeLineChart(c: ThemedReactContext) : LineChart(c) {
-    var chartData: Array<Float> = emptyArray<Float>()
+    var chartData: ArrayList<Float> = arrayListOf()
     var legendLabel: String = ""
     var darkMode: Boolean = false
     var themeColor: Int = Color.WHITE
-
-    @ReactProp(name = "chartData")
-    fun setMaxHighlightDistance(chart: NativeLineChart, chartData: ReadableArray) {
-        print(chartData)
-//        this.chartData = chartData
-    }
-
-    @ReactProp(name = "legendLabel")
-    fun setLegendLabel(chart: NativeLineChart, legendLabel: String) {
-        this.legendLabel = legendLabel
-    }
-
-    @ReactProp(name = "darkMode")
-    fun setDarkMode(chart: NativeLineChart, darkMode: Boolean) {
-        this.darkMode = darkMode
-    }
-
-    @ReactProp(name = "themeColor")
-    fun setThemeColor(chart: NativeLineChart, themeColor: String) {
-        this.themeColor = Color.parseColor(themeColor)
-    }
 
     init {
         this.setupChart()
@@ -105,8 +79,6 @@ class NativeLineChart(c: ThemedReactContext) : LineChart(c) {
 
         // Custom style for axisRight
         this.axisLeft.setDrawGridLines(false)
-        this.axisLeft.setDrawLabels(false)
-        this.axisLeft.setDrawAxisLine(false)
 
         // Custom style for axisLeft
         this.axisRight.setDrawGridLines(false)

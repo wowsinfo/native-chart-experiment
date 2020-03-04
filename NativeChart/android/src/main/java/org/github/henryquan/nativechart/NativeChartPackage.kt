@@ -5,21 +5,23 @@ import com.facebook.react.bridge.JavaScriptModule
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.uimanager.ViewManager
+import org.github.henryquan.nativechart.bar.NativeBarChartManager
+import org.github.henryquan.nativechart.horizontalBar.NativeHorizontalBarChartManager
 import org.github.henryquan.nativechart.line.NativeLineChartManager
+import org.github.henryquan.nativechart.pie.NativePieChartManager
 import java.util.*
 
 class NativeChartPackage : ReactPackage {
-    override fun createJSModules(): MutableList<Class<out JavaScriptModule>> {
-        return Collections.emptyList();
-    }
-
     override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
         return emptyList()
     }
 
     override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
         return listOf<ViewManager<*, *>>(
-                NativeLineChartManager()
+                NativeLineChartManager(),
+                NativeBarChartManager(),
+                NativeHorizontalBarChartManager(),
+                NativePieChartManager()
         )
     }
 }

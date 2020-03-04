@@ -6,13 +6,13 @@ package org.github.henryquan.nativechart.pie
 import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 
-class NativePieChartManager : SimpleViewManager<NativeLineChart>() {
+class NativePieChartManager : SimpleViewManager<NativePieChart>() {
     override fun getName(): String {
         return REACT_CLASS
     }
 
-    public override fun createViewInstance(c: ThemedReactContext): NativeLineChart {
-        return NativeLineChart(c)
+    public override fun createViewInstance(c: ThemedReactContext): NativePieChart {
+        return NativePieChart(c)
     }
 
     companion object {
