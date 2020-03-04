@@ -13,31 +13,11 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 
 class NativeBarChart(c: ThemedReactContext) : BarChart(c) {
-    var chartData: Array<Float> = emptyArray<Float>()
+    var chartData: ArrayList<Float> = arrayListOf()
+    var xAxisLabels: ArrayList<String> = arrayListOf()
     var legendLabel: String = ""
     var darkMode: Boolean = false
     var themeColor: Int = Color.WHITE
-
-    @ReactProp(name = "chartData")
-    fun setMaxHighlightDistance(chart: NativeBarChart, chartData: ReadableArray) {
-        print(chartData)
-//        this.chartData = chartData
-    }
-
-    @ReactProp(name = "legendLabel")
-    fun setLegendLabel(chart: NativeBarChart, legendLabel: String) {
-        this.legendLabel = legendLabel
-    }
-
-    @ReactProp(name = "darkMode")
-    fun setDarkMode(chart: NativeBarChart, darkMode: Boolean) {
-        this.darkMode = darkMode
-    }
-
-    @ReactProp(name = "themeColor")
-    fun setThemeColor(chart: NativeBarChart, themeColor: String) {
-        this.themeColor = Color.parseColor(themeColor)
-    }
 
     init {
         this.setupChart()

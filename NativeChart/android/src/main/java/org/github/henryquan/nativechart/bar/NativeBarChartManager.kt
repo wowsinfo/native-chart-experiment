@@ -3,11 +3,41 @@ package org.github.henryquan.nativechart.bar
 // AppCompatCheckBox import for React Native pre-0.60:
 // import android.support.v7.widget.AppCompatCheckBox;
 // AppCompatCheckBox import for React Native 0.60(+):
+import android.graphics.Color
+import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
+import com.facebook.react.uimanager.annotations.ReactProp
 import org.github.henryquan.nativechart.bar.NativeBarChart
 
 class NativeBarChartManager : SimpleViewManager<NativeBarChart>() {
+    @ReactProp(name = "chartData")
+    fun setChartData(chart: NativeBarChart, chartData: ReadableArray) {
+        print(chartData)
+        chart.chartData = chartData.toArrayList() as ArrayList<Float>
+//        this.chartData = chartData
+    }
+
+    @ReactProp(name = "xAxisLabels")
+    fun setXAxisLabels(chart: NativeBarChart, xAxisLabels: ReadableArray) {
+        chart.xAxisLabels = xAxisLabels.toArrayList() as ArrayList<String>
+    }
+
+    @ReactProp(name = "legendLabel")
+    fun setLegendLabel(chart: NativeBarChart, legendLabel: String) {
+        chart.legendLabel = legendLabel
+    }
+
+    @ReactProp(name = "darkMode")
+    fun setDarkMode(chart: NativeBarChart, darkMode: Boolean) {
+        chart.darkMode = darkMode
+    }
+
+    @ReactProp(name = "themeColor")
+    fun setThemeColor(chart: NativeBarChart, themeColor: String) {
+        chart.themeColor = Color.parseColor(themeColor)
+    }
+
     override fun getName(): String {
         return REACT_CLASS
     }
