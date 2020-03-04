@@ -11,6 +11,11 @@ class NativeLineChartManager : SimpleViewManager<NativeLineChart>() {
         return REACT_CLASS
     }
 
+    override fun onAfterUpdateTransaction(view: NativeLineChart?) {
+        // Update chart after everything has been set
+        view?.updateChart()
+    }
+
     public override fun createViewInstance(c: ThemedReactContext): NativeLineChart {
         return NativeLineChart(c)
     }
