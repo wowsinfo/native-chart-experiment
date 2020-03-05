@@ -34,18 +34,18 @@ class App extends React.Component {
     return (
       <SafeAreaView style={[root, darkMode ? {backgroundColor: 'black'} : null]}>
         <ScrollView style={root}>
-          <PieChart style={{height: 300, margin: 8}}
+          <PieChart style={{height: 200, margin: 8}}
             chartData={[100, 20, 50, 60]} dataLabels={['Henry', 'Thomas', 'Peter', 'Cody']}
-            legendLabel="White" darkMode={darkMode} themeColor="#6666FF"/>
-          <LineChart style={{height: 300, margin: 8}}
+            legendLabel="White" darkMode={darkMode} />
+          <LineChart style={{height: 120, margin: 8}}
             chartData={linedata} 
-            legendLabel="White" darkMode={darkMode} themeColor="#8888FF"/>
-          <BarChart style={{height: 300, margin: 8}}
+            legendLabel="White" darkMode={darkMode} themeColor="#03A9F4"/>
+          <BarChart style={{height: 120, margin: 8}}
             chartData={bardata} xAxisLabels={barLabels}
-            legendLabel="White" darkMode={darkMode} themeColor="#6666FF"/>
-          <HorizontalBarChart style={{height: 300, margin: 8}}
+            legendLabel="White" darkMode={darkMode} themeColor="#F44336"/>
+          <HorizontalBarChart style={{height: 200, margin: 8}}
             chartData={bardata} xAxisLabels={barLabels}
-            legendLabel="White" darkMode={darkMode} themeColor="#6666FF"/>
+            legendLabel="White" darkMode={darkMode} themeColor="#4CAF50"/>
         </ScrollView>
       </SafeAreaView>
     );

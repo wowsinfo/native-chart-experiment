@@ -23,11 +23,11 @@ class NativePieChart(c: ThemedReactContext) : PieChart(c) {
      */
     fun updateChart() {
         // Map float to entry
-        val formattedData = this.chartData.mapIndexed { index, element -> PieEntry(index.toFloat(), element)}
+        val formattedData = this.chartData.mapIndexed { index, element -> PieEntry(element, dataLabels[index])}
 
         // Get data set
         val chartDataSet = PieDataSet(formattedData, "")
-        chartDataSet.setColors(bestChartColours(chartData.size), 1)
+        chartDataSet.setColors(bestChartColours(chartData.size), 255)
         chartDataSet.valueTextColor = Color.BLACK
         val chartData = PieData(chartDataSet)
 
