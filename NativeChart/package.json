@@ -1,8 +1,8 @@
 {
   "name": "native-chart-experiment",
-  "title": "React Native Native Chart",
+  "title": "Native Chart Experiment",
   "version": "1.0.0",
-  "description": "TODO",
+  "description": "Trying out native ui module with Charts and MPAndroidChart",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test\" && exit 1"
@@ -18,13 +18,9 @@
     "ios",
     "android"
   ],
-  "author": {
-    "name": "Yiheng Quan",
-    "email": "development.henryquan@gmail.com"
-  },
+  "author": "Yiheng Quan <development.henryquan@gmail.com>",
   "license": "MIT",
   "licenseFilename": "LICENSE",
-  "readmeFilename": "README.md",
   "peerDependencies": {
     "react": "^16.8.1",
     "react-native": ">=0.59.0-rc.0 <1.0.x"
@@ -32,5 +28,9 @@
   "devDependencies": {
     "react": "^16.8.3",
     "react-native": "^0.59.10"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/HenryQuan/native-chart-experiment/issues"
+  },
+  "homepage": "https://github.com/HenryQuan/native-chart-experiment#readme"
 }
