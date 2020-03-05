@@ -1,43 +1,21 @@
 package org.github.henryquan.nativechart.horizontalBar
 
 import android.graphics.Color
-import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.uimanager.ThemedReactContext
-import com.facebook.react.uimanager.annotations.ReactProp
 import com.github.mikephil.charting.charts.HorizontalBarChart
-import com.github.mikephil.charting.components.LimitLine
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.Entry
-import com.github.mikephil.charting.data.LineData
-import com.github.mikephil.charting.data.LineDataSet
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarDataSet
+import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 
 class NativeHorizontalBarChart(c: ThemedReactContext) : HorizontalBarChart(c) {
-    var chartData: Array<Float> = emptyArray<Float>()
+    var chartData: ArrayList<Float> = arrayListOf()
+    var xAxisLabels: ArrayList<String> = arrayListOf()
     var legendLabel: String = ""
     var darkMode: Boolean = false
     var themeColor: Int = Color.WHITE
-
-    @ReactProp(name = "chartData")
-    fun setMaxHighlightDistance(chart: HorizontalBarChart, chartData: ReadableArray) {
-        print(chartData)
-//        this.chartData = chartData
-    }
-
-    @ReactProp(name = "legendLabel")
-    fun setLegendLabel(chart: HorizontalBarChart, legendLabel: String) {
-        this.legendLabel = legendLabel
-    }
-
-    @ReactProp(name = "darkMode")
-    fun setDarkMode(chart: HorizontalBarChart, darkMode: Boolean) {
-        this.darkMode = darkMode
-    }
-
-    @ReactProp(name = "themeColor")
-    fun setThemeColor(chart: HorizontalBarChart, themeColor: String) {
-        this.themeColor = Color.parseColor(themeColor)
-    }
 
     init {
         this.setupChart()
@@ -47,38 +25,33 @@ class NativeHorizontalBarChart(c: ThemedReactContext) : HorizontalBarChart(c) {
      * Update chart
      */
     fun updateChart() {
-        // Remove all lines
-        this.axisRight.removeAllLimitLines()
+        // Get theme colour
+        val textColour = if (darkMode) Color.WHITE else Color.BLACK
 
         // Map float to entry
-        val formattedData = this.chartData.mapIndexed { index, element -> Entry(index.toFloat(), element)}
+        val formattedData = this.chartData.mapIndexed { index, element -> BarEntry(index.toFloat(), element) }
 
         // Setup data and colour to chart
-        val dataSetList = mutableListOf<ILineDataSet>()
-        val chartDataSet = LineDataSet(formattedData, this.legendLabel)
+        val chartDataSet = BarDataSet(formattedData, this.legendLabel)
         chartDataSet.color = this.themeColor
-        chartDataSet.setCircleColor(this.themeColor)
-        chartDataSet.circleRadius = 3.0F
+        chartDataSet.valueTextSize = 12F
+        chartDataSet.setValueTextColors(mutableListOf(textColour))
         chartDataSet.setDrawValues(false)
-        dataSetList.add(chartDataSet)
 
-        val chartDataFormatted = LineData(dataSetList)
-//        this.data = chartDataFormatted
+        // Set labels
+        this.xAxis.valueFormatter = IndexAxisValueFormatter(this.xAxisLabels)
+        this.xAxis.setLabelCount(this.xAxisLabels.size, false)
+
+        // Update chart data
+        val chartDataFormatted = BarData(mutableListOf<IBarDataSet>(chartDataSet))
+        // Remove fractions
+//        chartDataFormatted.setValueFormatter(DefaultAxisValueFormatter())
+
+        this.data = chartDataFormatted
 
         // Update theme colour
-        val textColour = if (darkMode) Color.WHITE else Color.BLACK
         this.axisLeft.textColor = textColour
-        this.legend.textColor = textColour
-
-        // Add average line
-        val avg = chartData.reduce { acc, curr -> acc + curr } / chartData.size.toFloat()
-        val average = LimitLine(avg, String.format("%.1f", avg))
-        average.labelPosition = LimitLine.LimitLabelPosition.RIGHT_BOTTOM
-        average.lineWidth = 0.5F
-        average.textColor = textColour
-        // Fit to theme colour
-        average.lineColor = this.themeColor
-        this.axisRight.addLimitLine(average)
+        this.xAxis.textColor = textColour
     }
 
     /**
@@ -97,7 +70,6 @@ class NativeHorizontalBarChart(c: ThemedReactContext) : HorizontalBarChart(c) {
         // Custom style for xAxia
         this.xAxis.position = XAxis.XAxisPosition.BOTTOM
         this.xAxis.setDrawGridLines(false)
-        this.xAxis.setDrawLabels(false)
 
         // Custom style for axisRight
         this.axisLeft.setDrawGridLines(false)
@@ -108,5 +80,8 @@ class NativeHorizontalBarChart(c: ThemedReactContext) : HorizontalBarChart(c) {
         this.axisRight.setDrawGridLines(false)
         this.axisRight.setDrawLabels(false)
         this.axisRight.setDrawAxisLine(false)
+
+        // Don't draw legend for this
+        this.legend.isEnabled = false
     }
 }

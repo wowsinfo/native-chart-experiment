@@ -1,1 +1,0 @@
-robocopy /e /is node_modules\react-native-native-chart ..\NativeChart\ 

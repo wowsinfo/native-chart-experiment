@@ -43,8 +43,6 @@ class NativeBarChart(c: ThemedReactContext) : BarChart(c) {
         chartDataSet.setValueTextColors(mutableListOf(textColour))
         chartDataSet.setDrawValues(false)
 
-
-
         // Set labels
         this.xAxis.valueFormatter = IndexAxisValueFormatter(this.xAxisLabels)
         this.xAxis.setLabelCount(this.xAxisLabels.size, false)
@@ -88,7 +86,7 @@ class NativeBarChart(c: ThemedReactContext) : BarChart(c) {
         this.axisRight.setDrawLabels(false)
         this.axisRight.setDrawAxisLine(false)
 
-        // Don't draw leend for this
+        // Don't draw legend for this
         this.legend.isEnabled = false
     }
 }
