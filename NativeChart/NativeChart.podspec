@@ -7,14 +7,14 @@ Pod::Spec.new do |s|
   s.version      = package["version"]
   s.summary      = package["description"]
   s.description  = <<-DESC
-                  react-native-native-chart
+                  charts for react native
                    DESC
-  s.homepage     = "https://github.com/github_account/react-native-native-chart"
+  s.homepage     = "https://github.com/HenryQuan/native-chart-experiment"
   s.license      = "MIT"
   # s.license    = { :type => "MIT", :file => "FILE_LICENSE" }
-  s.authors      = { "Your Name" => "yourname@email.com" }
+  s.authors      = { "Yiheng Quan" => "development.henryquan@gmail.com" }
   s.platforms    = { :ios => "9.0" }
-  s.source       = { :git => "https://github.com/github_account/react-native-native-chart.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/HenryQuan/native-chart-experiment.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,swift}"
   s.requires_arc = true
