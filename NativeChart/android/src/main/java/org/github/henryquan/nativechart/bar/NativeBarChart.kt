@@ -7,9 +7,12 @@ import com.facebook.react.uimanager.annotations.ReactProp
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.LimitLine
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.Entry
-import com.github.mikephil.charting.data.LineData
-import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.data.*
+import com.github.mikephil.charting.formatter.DefaultAxisValueFormatter
+import com.github.mikephil.charting.formatter.DefaultValueFormatter
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.github.mikephil.charting.formatter.ValueFormatter
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 
 class NativeBarChart(c: ThemedReactContext) : BarChart(c) {
@@ -27,38 +30,35 @@ class NativeBarChart(c: ThemedReactContext) : BarChart(c) {
      * Update chart
      */
     fun updateChart() {
-        // Remove all lines
-        this.axisRight.removeAllLimitLines()
+        // Get theme colour
+        val textColour = if (darkMode) Color.WHITE else Color.BLACK
 
         // Map float to entry
-        val formattedData = this.chartData.mapIndexed { index, element -> Entry(index.toFloat(), element)}
+        val formattedData = this.chartData.mapIndexed { index, element -> BarEntry(index.toFloat(), element)}
 
         // Setup data and colour to chart
-        val dataSetList = mutableListOf<ILineDataSet>()
-        val chartDataSet = LineDataSet(formattedData, this.legendLabel)
+        val chartDataSet = BarDataSet(formattedData, this.legendLabel)
         chartDataSet.color = this.themeColor
-        chartDataSet.setCircleColor(this.themeColor)
-        chartDataSet.circleRadius = 3.0F
+        chartDataSet.valueTextSize = 12F
+        chartDataSet.setValueTextColors(mutableListOf(textColour))
         chartDataSet.setDrawValues(false)
-        dataSetList.add(chartDataSet)
 
-        val chartDataFormatted = LineData(dataSetList)
-//        this.data = chartDataFormatted
+
+
+        // Set labels
+        this.xAxis.valueFormatter = IndexAxisValueFormatter(this.xAxisLabels)
+        this.xAxis.setLabelCount(this.xAxisLabels.size, false)
+
+        // Update chart data
+        val chartDataFormatted = BarData(mutableListOf<IBarDataSet>(chartDataSet))
+        // Remove fractions
+//        chartDataFormatted.setValueFormatter(DefaultAxisValueFormatter())
+
+        this.data = chartDataFormatted
 
         // Update theme colour
-        val textColour = if (darkMode) Color.WHITE else Color.BLACK
         this.axisLeft.textColor = textColour
-        this.legend.textColor = textColour
-
-        // Add average line
-        val avg = chartData.reduce { acc, curr -> acc + curr } / chartData.size.toFloat()
-        val average = LimitLine(avg, String.format("%.1f", avg))
-        average.labelPosition = LimitLine.LimitLabelPosition.RIGHT_BOTTOM
-        average.lineWidth = 0.5F
-        average.textColor = textColour
-        // Fit to theme colour
-        average.lineColor = this.themeColor
-        this.axisRight.addLimitLine(average)
+        this.xAxis.textColor = textColour
     }
 
     /**
@@ -77,7 +77,6 @@ class NativeBarChart(c: ThemedReactContext) : BarChart(c) {
         // Custom style for xAxia
         this.xAxis.position = XAxis.XAxisPosition.BOTTOM
         this.xAxis.setDrawGridLines(false)
-        this.xAxis.setDrawLabels(false)
 
         // Custom style for axisRight
         this.axisLeft.setDrawGridLines(false)
@@ -88,5 +87,8 @@ class NativeBarChart(c: ThemedReactContext) : BarChart(c) {
         this.axisRight.setDrawGridLines(false)
         this.axisRight.setDrawLabels(false)
         this.axisRight.setDrawAxisLine(false)
+
+        // Don't draw leend for this
+        this.legend.isEnabled = false
     }
 }

@@ -15,7 +15,6 @@ class NativeBarChartManager : SimpleViewManager<NativeBarChart>() {
     fun setChartData(chart: NativeBarChart, chartData: ReadableArray) {
         print(chartData)
         chart.chartData = chartData.toArrayList() as ArrayList<Float>
-//        this.chartData = chartData
     }
 
     @ReactProp(name = "xAxisLabels")
