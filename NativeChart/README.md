@@ -9,7 +9,7 @@ Please use [react-native-charts-wrapper](https://github.com/wuxudong/react-nativ
 
 `$ react-native link react-native-native-chart`
 
-This is not needed for React Native 0.60+
+This is not needed for React Native 0.60+. **Please create a swift file inside your main IOS project in order to have a bridging header.**
 
 # API
 Comming soon...
