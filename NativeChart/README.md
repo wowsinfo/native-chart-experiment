@@ -1,4 +1,5 @@
-# react-native-native-chart
+# Native Chart Experiment
+Please use [react-native-charts-wrapper](https://github.com/wuxudong/react-native-charts-wrapper) whenever possible. This is only meant to use with my app, [WoWs Info](https://github.com/HenryQuan/WoWs-Info-Re).
 
 ## Getting started
 
@@ -8,10 +9,11 @@
 
 `$ react-native link react-native-native-chart`
 
-## Usage
-```javascript
-import NativeChart from 'react-native-native-chart';
+This is not needed for React Native 0.60+
 
-// TODO: What to do with the module?
-NativeChart;
-```
+# API
+Comming soon...
+
+# Screenshots
+<img src="https://github.com/HenryQuan/native-chart-experiment/blob/master/screenshots/ios.png?raw=true" width="250px" height="500px" />
+<img src="https://github.com/HenryQuan/native-chart-experiment/blob/master/screenshots/android.png?raw=true" width="231px" height="500px" />
