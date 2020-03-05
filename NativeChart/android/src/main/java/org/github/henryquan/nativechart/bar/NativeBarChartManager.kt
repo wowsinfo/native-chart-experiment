@@ -9,6 +9,7 @@ import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.annotations.ReactProp
 import org.github.henryquan.nativechart.bar.NativeBarChart
+import org.github.henryquan.nativechart.horizontalBar.NativeHorizontalBarChart
 
 class NativeBarChartManager : SimpleViewManager<NativeBarChart>() {
     @ReactProp(name = "chartData")
@@ -35,6 +36,12 @@ class NativeBarChartManager : SimpleViewManager<NativeBarChart>() {
     @ReactProp(name = "themeColor")
     fun setThemeColor(chart: NativeBarChart, themeColor: String) {
         chart.themeColor = Color.parseColor(themeColor)
+    }
+
+    override fun onAfterUpdateTransaction(view: NativeBarChart) {
+        // Update chart after everything has been set
+        view.updateChart()
+        super.onAfterUpdateTransaction(view)
     }
 
     override fun getName(): String {

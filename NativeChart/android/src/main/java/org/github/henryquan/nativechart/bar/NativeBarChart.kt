@@ -41,7 +41,6 @@ class NativeBarChart(c: ThemedReactContext) : BarChart(c) {
         chartDataSet.color = this.themeColor
         chartDataSet.valueTextSize = 12F
         chartDataSet.setValueTextColors(mutableListOf(textColour))
-        chartDataSet.setDrawValues(false)
 
         // Set labels
         this.xAxis.valueFormatter = IndexAxisValueFormatter(this.xAxisLabels)
