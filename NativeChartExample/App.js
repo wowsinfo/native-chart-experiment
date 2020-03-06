@@ -13,7 +13,7 @@ import {
   ScrollView,
   View
 } from 'react-native';
-import { LineChart, BarChart, HorizontalBarChart, PieChart } from 'react-native-native-chart';
+import { LineChart, BarChart, HorizontalBarChart, PieChart } from 'native-chart-experiment';
 
 class App extends React.Component {
   constructor(props) {
