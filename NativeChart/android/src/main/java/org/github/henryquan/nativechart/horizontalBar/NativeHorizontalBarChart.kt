@@ -34,8 +34,7 @@ class NativeHorizontalBarChart(c: ThemedReactContext) : HorizontalBarChart(c) {
         // Setup data and colour to chart
         val chartDataSet = BarDataSet(formattedData, this.legendLabel)
         chartDataSet.color = this.themeColor
-        chartDataSet.valueTextSize = 12F
-        chartDataSet.setValueTextColors(mutableListOf(textColour))
+        chartDataSet.setDrawValues(false)
 
         // Set labels
         this.xAxis.valueFormatter = IndexAxisValueFormatter(this.xAxisLabels)
@@ -72,8 +71,8 @@ class NativeHorizontalBarChart(c: ThemedReactContext) : HorizontalBarChart(c) {
 
         // Custom style for axisRight
         this.axisLeft.setDrawGridLines(false)
-        this.axisLeft.setDrawLabels(false)
-        this.axisLeft.setDrawAxisLine(false)
+        this.axisLeft.setDrawLabels(true)
+        this.axisLeft.setDrawAxisLine(true)
 
         // Custom style for axisLeft
         this.axisRight.setDrawGridLines(false)
