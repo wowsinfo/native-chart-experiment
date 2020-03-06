@@ -38,8 +38,7 @@ class NativeHorizontalBarChart : HorizontalBarChartView, OptimisedBarLineChart {
         let chartDataSet = BarChartDataSet(entries: formattedData, label: legendLabel)
         // Use only theme colour
         chartDataSet.colors = [UIColor(hex: themeColor)!]
-        chartDataSet.valueFont = UIFont.systemFont(ofSize: 12)
-        chartDataSet.valueColors = [textColour]
+        chartDataSet.drawValuesEnabled = false
         let chartData = BarChartData(dataSets: [chartDataSet])
         
         // Remove fractions
@@ -80,9 +79,9 @@ class NativeHorizontalBarChart : HorizontalBarChartView, OptimisedBarLineChart {
         chart.rightAxis.drawAxisLineEnabled = false
         
         // Custom style for leftAxis
-        chart.leftAxis.drawLabelsEnabled = false
+        chart.leftAxis.drawLabelsEnabled = true
         chart.leftAxis.drawGridLinesEnabled = false
-        chart.leftAxis.drawAxisLineEnabled = false
+        chart.leftAxis.drawAxisLineEnabled = true
         // Don't need to show the legend for this
         chart.legend.enabled = false
     }

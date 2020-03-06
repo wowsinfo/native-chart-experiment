@@ -21,8 +21,8 @@ class App extends React.Component {
 
     this.state = {
       linedata: [200.0, 0.0, 10.0, 25.0, 15.0, 5.0, 30.0, 300, 40.0, 10.0],
-      bardata: [10, 50, 60, 70, 200, 500, 50, 60, 70, 80],
-      barLabels: ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"],
+      bardata: [200, 500, 600, 700, 70, 500, 500, 600, 700, 800],
+      barLabels: ["I", "II", "III", "IV IV ", "V", "VI", "VII", "VIII", "IX", "X"],
       darkMode: false
     }
   }
@@ -43,8 +43,11 @@ class App extends React.Component {
           <BarChart style={{height: 120, margin: 8}}
             chartData={bardata} xAxisLabels={barLabels}
             legendLabel="White" darkMode={darkMode} themeColor="#F44336"/>
-          <HorizontalBarChart style={{height: 120, margin: 8}}
+          <HorizontalBarChart style={{height: 140, margin: 8}}
             chartData={bardata} xAxisLabels={barLabels}
+            legendLabel="White" darkMode={darkMode} themeColor="#F44336"/>
+          <HorizontalBarChart style={{height: 120}}
+            chartData={bardata.map(v => v)} xAxisLabels={barLabels}
             legendLabel="White" darkMode={darkMode} themeColor="#F44336"/>
           <HorizontalBarChart style={{height: 200, margin: 8}}
             chartData={[118199, 102071, 96614, 88175, 75439, 89817, 103086, 80500]} 
