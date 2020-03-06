@@ -44,7 +44,8 @@ class App extends React.Component {
             chartData={bardata} xAxisLabels={barLabels}
             legendLabel="White" darkMode={darkMode} themeColor="#F44336"/>
           <HorizontalBarChart style={{height: 200, margin: 8}}
-            chartData={bardata} xAxisLabels={barLabels}
+            chartData={[118199, 102071, 96614, 88175, 75439, 89817, 103086, 80500]} 
+            xAxisLabels={["Bourgogne", "Thunderer", "Ohio", "Kremlin", "Großer Kurfürst", "République", "Conqueror", "Yamato"]}
             legendLabel="White" darkMode={darkMode} themeColor="#4CAF50"/>
         </ScrollView>
       </SafeAreaView>
