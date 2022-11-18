@@ -1,1 +1,0 @@
-robocopy /e /is node_modules\native-chart-experiment ..\NativeChart\

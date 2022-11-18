@@ -1,19 +1,15 @@
-# Native Chart Experiment
-Please use [react-native-charts-wrapper](https://github.com/wuxudong/react-native-charts-wrapper) whenever possible. This is only meant to use with my app, [WoWs Info](https://github.com/HenryQuan/WoWs-Info-Re).
+# native-chart-experiment
 
-## Getting started
+Trying out native ui module with Charts and MPAndroidChart
 
-`$ npm install react-native-native-chart --save`
+## Contributing
 
-### Mostly automatic installation
+See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
-`$ react-native link react-native-native-chart`
+## License
 
-This is not needed for React Native 0.60+. **Please create a swift file inside your main IOS project in order to have a bridging header.**
+MIT
 
-# API
-Comming soon...
+---
 
-# Screenshots
-<img src="https://github.com/HenryQuan/native-chart-experiment/blob/master/screenshots/ios.png?raw=true" width="250px" height="500px" />
-<img src="https://github.com/HenryQuan/native-chart-experiment/blob/master/screenshots/android.png?raw=true" width="231px" height="500px" />
+Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
