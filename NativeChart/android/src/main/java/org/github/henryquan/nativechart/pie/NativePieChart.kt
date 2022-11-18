@@ -9,60 +9,61 @@ import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.utils.ColorTemplate
 
 class NativePieChart(c: ThemedReactContext) : PieChart(c) {
-    var chartData: ArrayList<Float> = arrayListOf()
-    var dataLabels: ArrayList<String> = arrayListOf()
-    var darkMode: Boolean = false
-    var themeColor: Int = Color.WHITE
+  var chartData: ArrayList<Float> = arrayListOf()
+  var dataLabels: ArrayList<String> = arrayListOf()
+  var darkMode: Boolean = false
+  var themeColor: Int = Color.WHITE
 
-    init {
-        this.setupChart()
-    }
+  init {
+    this.setupChart()
+  }
 
-    /**
-     * Update chart
-     */
-    fun updateChart() {
-        // Map float to entry
-        val formattedData = this.chartData.mapIndexed { index, element -> PieEntry(element, dataLabels[index])}
+  /**
+   * Update chart
+   */
+  fun updateChart() {
+    // Map float to entry
+    val formattedData =
+      this.chartData.mapIndexed { index, element -> PieEntry(element, dataLabels[index]) }
 
-        // Get data set
-        val chartDataSet = PieDataSet(formattedData, "")
-        chartDataSet.setColors(bestChartColours(chartData.size), 255)
-        chartDataSet.valueTextColor = Color.BLACK
-        val chartData = PieData(chartDataSet)
+    // Get data set
+    val chartDataSet = PieDataSet(formattedData, "")
+    chartDataSet.setColors(bestChartColours(chartData.size), 255)
+    chartDataSet.valueTextColor = Color.BLACK
+    val chartData = PieData(chartDataSet)
 
-        // No fraction
+    // No fraction
 //        val format = NumberFormatter()
 //        format.minimumFractionDigits = 0
 //        chartData.setValueFormatter(DefaultValueFormatter(formatter: format))
 
-        // Update data source
-        this.data = chartData
+    // Update data source
+    this.data = chartData
 
-        // Update theme colour
-        val textColour = if (darkMode) Color.WHITE else Color.BLACK
-        this.legend.textColor = textColour
-    }
+    // Update theme colour
+    val textColour = if (darkMode) Color.WHITE else Color.BLACK
+    this.legend.textColor = textColour
+  }
 
-    private fun bestChartColours(size: Int): IntArray {
-        return ColorTemplate.MATERIAL_COLORS
-    }
+  private fun bestChartColours(size: Int): IntArray {
+    return ColorTemplate.MATERIAL_COLORS
+  }
 
 
-    /**
-     * Setup the chart
-     */
-    private fun setupChart() {
-        // Text related
-        this.setNoDataText("...")
-        this.description.text = ""
+  /**
+   * Setup the chart
+   */
+  private fun setupChart() {
+    // Text related
+    this.setNoDataText("...")
+    this.description.text = ""
 
-        this.setDrawEntryLabels(false)
-        this.setDrawSlicesUnderHole(false)
+    this.setDrawEntryLabels(false)
+    this.setDrawSlicesUnderHole(false)
 
-        // Disable rotation
-        this.isRotationEnabled = false
-        // Transparent
-        this.setHoleColor(Color.TRANSPARENT)
-    }
+    // Disable rotation
+    this.isRotationEnabled = false
+    // Transparent
+    this.setHoleColor(Color.TRANSPARENT)
+  }
 }

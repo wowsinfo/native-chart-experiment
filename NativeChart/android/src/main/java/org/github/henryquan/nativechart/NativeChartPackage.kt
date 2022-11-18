@@ -8,19 +8,18 @@ import org.github.henryquan.nativechart.bar.NativeBarChartManager
 import org.github.henryquan.nativechart.horizontalBar.NativeHorizontalBarChartManager
 import org.github.henryquan.nativechart.line.NativeLineChartManager
 import org.github.henryquan.nativechart.pie.NativePieChartManager
-import java.util.*
 
 class NativeChartPackage : ReactPackage {
-    override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
-        return emptyList()
-    }
+  override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
+    return emptyList()
+  }
 
-    override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-        return listOf<ViewManager<*, *>>(
-                NativeLineChartManager(),
-                NativeBarChartManager(),
-                NativeHorizontalBarChartManager(),
-                NativePieChartManager()
-        )
-    }
+  override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
+    return listOf<ViewManager<*, *>>(
+      NativeLineChartManager(),
+      NativeBarChartManager(),
+      NativeHorizontalBarChartManager(),
+      NativePieChartManager()
+    )
+  }
 }
