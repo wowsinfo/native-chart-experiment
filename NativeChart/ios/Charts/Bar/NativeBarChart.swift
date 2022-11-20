@@ -63,7 +63,7 @@ class NativeBarChart : BarChartView, OptimisedBarLineChart {
     func setupChart(chart: BarLineChartViewBase) {
         // Text related
         chart.noDataText = "No Information are provided"
-        chart.chartDescription?.text = ""
+        chart.chartDescription.text = ""
         
         // Disable zoom and interaction
         chart.highlightPerTapEnabled = false

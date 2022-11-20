@@ -4,19 +4,22 @@ package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32'
 
 Pod::Spec.new do |s|
-  s.name         = "native-chart-experiment"
+  s.name         = "NativeChart"
   s.version      = package["version"]
   s.summary      = package["description"]
   s.homepage     = package["homepage"]
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => "10.0" }
+  s.platforms    = { :ios => "12.4" }
   s.source       = { :git => "https://github.com/HenryQuan/native-chart-experiment.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
+  s.swift_version = '5.0'
   s.dependency "React-Core"
+  # use this fixed version of charts
+  s.dependency "Charts", "4.1.0"
 
   # Don't install the dependencies when we run `pod install` in the old architecture.
   if ENV['RCT_NEW_ARCH_ENABLED'] == '1' then
@@ -26,6 +29,7 @@ Pod::Spec.new do |s|
         "OTHER_CPLUSPLUSFLAGS" => "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1",
         "CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
     }
+
     s.dependency "React-Codegen"
     s.dependency "RCT-Folly"
     s.dependency "RCTRequired"

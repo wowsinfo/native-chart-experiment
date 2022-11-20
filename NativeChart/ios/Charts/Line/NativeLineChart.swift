@@ -54,7 +54,7 @@ class NativeLineChart : LineChartView, OptimisedBarLineChart {
         // Add average line
         let avg = chartData.reduce(0.0, { x, y in x + y }) / Double(chartData.count)
         let average = ChartLimitLine(limit: avg, label: String(format: "%.1f", avg))
-        average.labelPosition = .bottomRight
+        average.labelPosition = .rightBottom
         average.lineWidth = 0.5
         average.valueTextColor = textColour
         // Fit to theme colour
@@ -66,7 +66,7 @@ class NativeLineChart : LineChartView, OptimisedBarLineChart {
     internal func setupChart(chart: BarLineChartViewBase) {
         // Text related
         chart.noDataText = "No Information are provided"
-        chart.chartDescription?.text = ""
+        chart.chartDescription.text = ""
         
         // Disable zoom and interaction
         chart.highlightPerTapEnabled = false

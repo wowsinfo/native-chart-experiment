@@ -1,3 +1,4 @@
 ._*
 Pods
 .DS_Store
+**/vendor/

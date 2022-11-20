@@ -89,7 +89,7 @@ class NativePieChart : PieChartView {
     
     func setupChart() {
         self.noDataText = "..."
-        self.chartDescription?.text = ""
+        self.chartDescription.text = ""
         self.drawEntryLabelsEnabled = false
         self.drawSlicesUnderHoleEnabled = false
         

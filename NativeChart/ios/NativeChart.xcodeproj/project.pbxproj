@@ -7,8 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E555C0D2413F4C50049A1A2 /* NativeChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* NativeChart.m */; };
-		F4FF95D7245B92E800C19C63 /*  NativeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  NativeChart.swift */; };
+		9256832C2928B37200F035C7 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925683192928B37200F035C7 /* UIColor+Hex.swift */; };
+		9256832D2928B37200F035C7 /* NativePieChartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9256831C2928B37200F035C7 /* NativePieChartManager.m */; };
+		9256832E2928B37200F035C7 /* NativePieChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9256831D2928B37200F035C7 /* NativePieChartManager.swift */; };
+		9256832F2928B37200F035C7 /* NativePieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9256831E2928B37200F035C7 /* NativePieChart.swift */; };
+		925683302928B37200F035C7 /* OptimisedChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9256831F2928B37200F035C7 /* OptimisedChart.swift */; };
+		925683312928B37200F035C7 /* NativeHorizontalBarChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925683212928B37200F035C7 /* NativeHorizontalBarChartManager.swift */; };
+		925683322928B37200F035C7 /* NativeHorizontalBarChartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 925683222928B37200F035C7 /* NativeHorizontalBarChartManager.m */; };
+		925683332928B37200F035C7 /* NativeHorizontalBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925683232928B37200F035C7 /* NativeHorizontalBarChart.swift */; };
+		925683342928B37200F035C7 /* NativeLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925683252928B37200F035C7 /* NativeLineChart.swift */; };
+		925683352928B37200F035C7 /* NativeLineChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925683262928B37200F035C7 /* NativeLineChartManager.swift */; };
+		925683362928B37200F035C7 /* NativeLineChartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 925683272928B37200F035C7 /* NativeLineChartManager.m */; };
+		925683372928B37200F035C7 /* NativeBarChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925683292928B37200F035C7 /* NativeBarChartManager.swift */; };
+		925683382928B37200F035C7 /* NativeBarChartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9256832A2928B37200F035C7 /* NativeBarChartManager.m */; };
+		925683392928B37200F035C7 /* NativeBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9256832B2928B37200F035C7 /* NativeBarChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +37,21 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libNativeChart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNativeChart.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5891CC2AC0600A0062D /* NativeChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeChart.m; sourceTree = "<group>"; };
+		925683192928B37200F035C7 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		9256831C2928B37200F035C7 /* NativePieChartManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativePieChartManager.m; sourceTree = "<group>"; };
+		9256831D2928B37200F035C7 /* NativePieChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativePieChartManager.swift; sourceTree = "<group>"; };
+		9256831E2928B37200F035C7 /* NativePieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativePieChart.swift; sourceTree = "<group>"; };
+		9256831F2928B37200F035C7 /* OptimisedChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptimisedChart.swift; sourceTree = "<group>"; };
+		925683212928B37200F035C7 /* NativeHorizontalBarChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeHorizontalBarChartManager.swift; sourceTree = "<group>"; };
+		925683222928B37200F035C7 /* NativeHorizontalBarChartManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeHorizontalBarChartManager.m; sourceTree = "<group>"; };
+		925683232928B37200F035C7 /* NativeHorizontalBarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeHorizontalBarChart.swift; sourceTree = "<group>"; };
+		925683252928B37200F035C7 /* NativeLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeLineChart.swift; sourceTree = "<group>"; };
+		925683262928B37200F035C7 /* NativeLineChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeLineChartManager.swift; sourceTree = "<group>"; };
+		925683272928B37200F035C7 /* NativeLineChartManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeLineChartManager.m; sourceTree = "<group>"; };
+		925683292928B37200F035C7 /* NativeBarChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeBarChartManager.swift; sourceTree = "<group>"; };
+		9256832A2928B37200F035C7 /* NativeBarChartManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeBarChartManager.m; sourceTree = "<group>"; };
+		9256832B2928B37200F035C7 /* NativeBarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeBarChart.swift; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* NativeChart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NativeChart-Bridging-Header.h"; sourceTree = "<group>"; };
-		F4FF95D6245B92E800C19C63 /* NativeChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +76,71 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				F4FF95D6245B92E800C19C63 /* NativeChart.swift */,
-				B3E7B5891CC2AC0600A0062D /* NativeChart.m */,
+				9256831A2928B37200F035C7 /* Charts */,
+				925683182928B37200F035C7 /* Utils */,
 				F4FF95D5245B92E700C19C63 /* NativeChart-Bridging-Header.h */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		925683182928B37200F035C7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				925683192928B37200F035C7 /* UIColor+Hex.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9256831A2928B37200F035C7 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				9256831B2928B37200F035C7 /* Pie */,
+				9256831F2928B37200F035C7 /* OptimisedChart.swift */,
+				925683202928B37200F035C7 /* HorizontalBar */,
+				925683242928B37200F035C7 /* Line */,
+				925683282928B37200F035C7 /* Bar */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		9256831B2928B37200F035C7 /* Pie */ = {
+			isa = PBXGroup;
+			children = (
+				9256831C2928B37200F035C7 /* NativePieChartManager.m */,
+				9256831D2928B37200F035C7 /* NativePieChartManager.swift */,
+				9256831E2928B37200F035C7 /* NativePieChart.swift */,
+			);
+			path = Pie;
+			sourceTree = "<group>";
+		};
+		925683202928B37200F035C7 /* HorizontalBar */ = {
+			isa = PBXGroup;
+			children = (
+				925683212928B37200F035C7 /* NativeHorizontalBarChartManager.swift */,
+				925683222928B37200F035C7 /* NativeHorizontalBarChartManager.m */,
+				925683232928B37200F035C7 /* NativeHorizontalBarChart.swift */,
+			);
+			path = HorizontalBar;
+			sourceTree = "<group>";
+		};
+		925683242928B37200F035C7 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				925683252928B37200F035C7 /* NativeLineChart.swift */,
+				925683262928B37200F035C7 /* NativeLineChartManager.swift */,
+				925683272928B37200F035C7 /* NativeLineChartManager.m */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		925683282928B37200F035C7 /* Bar */ = {
+			isa = PBXGroup;
+			children = (
+				925683292928B37200F035C7 /* NativeBarChartManager.swift */,
+				9256832A2928B37200F035C7 /* NativeBarChartManager.m */,
+				9256832B2928B37200F035C7 /* NativeBarChart.swift */,
+			);
+			path = Bar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,8 +200,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FF95D7245B92E800C19C63 /* NativeChart.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* NativeChart.m in Sources */,
+				9256832D2928B37200F035C7 /* NativePieChartManager.m in Sources */,
+				925683392928B37200F035C7 /* NativeBarChart.swift in Sources */,
+				925683332928B37200F035C7 /* NativeHorizontalBarChart.swift in Sources */,
+				9256832C2928B37200F035C7 /* UIColor+Hex.swift in Sources */,
+				925683372928B37200F035C7 /* NativeBarChartManager.swift in Sources */,
+				9256832F2928B37200F035C7 /* NativePieChart.swift in Sources */,
+				925683382928B37200F035C7 /* NativeBarChartManager.m in Sources */,
+				925683362928B37200F035C7 /* NativeLineChartManager.m in Sources */,
+				925683342928B37200F035C7 /* NativeLineChart.swift in Sources */,
+				925683312928B37200F035C7 /* NativeHorizontalBarChartManager.swift in Sources */,
+				925683302928B37200F035C7 /* OptimisedChart.swift in Sources */,
+				925683352928B37200F035C7 /* NativeLineChartManager.swift in Sources */,
+				9256832E2928B37200F035C7 /* NativePieChartManager.swift in Sources */,
+				925683322928B37200F035C7 /* NativeHorizontalBarChartManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +264,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -212,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
