@@ -1,7 +1,7 @@
 {
   "name": "native-chart-experiment",
   "title": "Native Chart Experiment",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Trying out native ui module with Charts and MPAndroidChart",
   "main": "index.js",
   "scripts": {
