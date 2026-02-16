@@ -7,3 +7,4 @@ build/
 *.log
 .gradle/
 local.properties
+_codeql_detected_source_root
