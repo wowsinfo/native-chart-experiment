@@ -38,6 +38,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    
+    buildFeatures {
+        buildConfig = true
+    }
 
     defaultConfig {
         applicationId = "com.nativechartexample"
@@ -45,6 +49,9 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
+        
+        buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "false")
+        buildConfigField("boolean", "IS_HERMES_ENABLED", "true")
     }
     
     signingConfigs {
