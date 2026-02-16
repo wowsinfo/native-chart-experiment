@@ -23,11 +23,11 @@
   "licenseFilename": "LICENSE",
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-native": ">=0.83.0"
+    "react-native": ">=0.80.0"
   },
   "devDependencies": {
     "react": "^18.3.1",
-    "react-native": "^0.83.0"
+    "react-native": "^0.80.0"
   },
   "bugs": {
     "url": "https://github.com/HenryQuan/native-chart-experiment/issues"

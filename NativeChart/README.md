@@ -3,7 +3,7 @@ Please use [react-native-charts-wrapper](https://github.com/wuxudong/react-nativ
 
 ## Requirements
 
-- React Native 0.83+
+- React Native 0.80+ (with new architecture support)
 - iOS 15.0+
 - Swift 6.0+
 - Android SDK 24+ (Android 7.0+)
@@ -15,7 +15,7 @@ Please use [react-native-charts-wrapper](https://github.com/wuxudong/react-nativ
 
 ### Automatic installation
 
-With React Native 0.83+, the module is automatically linked. No manual linking is required.
+With React Native 0.60+, the module is automatically linked. No manual linking is required.
 
 **For iOS**: Run `pod install` in the `ios` directory after installation.
 
