@@ -1,3 +1,10 @@
 ._*
 Pods
 .DS_Store
+node_modules/
+*.lock
+build/
+*.log
+.gradle/
+local.properties
+_codeql_detected_source_root
