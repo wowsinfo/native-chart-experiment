@@ -1,18 +1,26 @@
 # Native Chart Experiment
 Please use [react-native-charts-wrapper](https://github.com/wuxudong/react-native-charts-wrapper) whenever possible. This is only meant to use with my app, [WoWs Info](https://github.com/HenryQuan/WoWs-Info-Re).
 
+## Requirements
+
+- React Native 0.83+
+- iOS 15.0+
+- Swift 6.0+
+- Android SDK 24+ (Android 7.0+)
+- Kotlin 2.1+
+
 ## Getting started
 
-`$ npm install react-native-native-chart --save`
+`$ npm install native-chart-experiment --save`
 
-### Mostly automatic installation
+### Automatic installation
 
-`$ react-native link react-native-native-chart`
+With React Native 0.83+, the module is automatically linked. No manual linking is required.
 
-This is not needed for React Native 0.60+. **Please create a swift file inside your main IOS project in order to have a bridging header.**
+**For iOS**: Run `pod install` in the `ios` directory after installation.
 
 # API
-Comming soon...
+Coming soon...
 
 # Screenshots
 <img src="https://github.com/HenryQuan/native-chart-experiment/blob/master/screenshots/ios.png?raw=true" width="250px" height="500px" />
