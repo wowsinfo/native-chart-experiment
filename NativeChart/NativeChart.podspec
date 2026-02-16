@@ -13,14 +13,14 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   # s.license    = { :type => "MIT", :file => "FILE_LICENSE" }
   s.authors      = { "Yiheng Quan" => "development.henryquan@gmail.com" }
-  s.platforms    = { :ios => "9.0" }
+  s.platforms    = { :ios => "15.0" }
   s.source       = { :git => "https://github.com/HenryQuan/native-chart-experiment.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,swift}"
   s.requires_arc = true
 
-  s.swift_version = '5.0'
-  s.dependency "React"
+  s.swift_version = '6.0'
+  s.dependency "React-Core"
   s.dependency "Charts"
 end
 
